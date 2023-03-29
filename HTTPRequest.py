@@ -56,7 +56,6 @@ class HTTPRequest:
                 timeout=connection_time_out,
                 verify=not skip_https_certificate_check
             )
-            response = requests.post(self.http_url, json=data)
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as exc:
@@ -81,7 +80,6 @@ class HTTPRequest:
                 timeout=connection_time_out,
                 verify=not skip_https_certificate_check
             )
-            response = requests.put(self.http_url, json=data)
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as exc:
@@ -104,7 +102,6 @@ class HTTPRequest:
                 timeout=connection_time_out,
                 verify=not skip_https_certificate_check
             )
-            response = requests.delete(self.http_url, json=data)
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as exc:
